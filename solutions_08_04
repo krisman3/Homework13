@@ -1,0 +1,55 @@
+##### Homework 13
+
+### Task 1:
+
+class Device:
+
+    def __init__(self, name, model, power_consumption):
+        self.name = name
+        self.model = model
+        self.power_consumption = power_consumption
+
+    def turn_on(self):
+        print(f"Device {self.name} : {self.model} is on and is consuming {self.power_consumption} units.")
+
+    def turn_off(self):
+        print(f"Device {self.name} : {self.model} is turned off.")
+
+
+
+class CoffeeMachine(Device):
+
+    def __init__(self, coffee_type, name, model, power_consumption):
+        super().__init__(name, model, power_consumption)
+        self.coffee_type = coffee_type  # Can be ground or beans
+
+    def brew_coffee(self):
+        print(f"Currently brewing {self.coffee_type}")
+
+
+class Blender(Device):
+
+    def __init__(self, blade_speed, name, model, power_consumption):
+        super().__init__(name, model, power_consumption)
+        self.blade_speed = blade_speed
+
+    def blend(self):
+        print(f"Currently blending with {self.blade_speed} rpm.")
+
+
+class MeatGrinder(Device):
+
+    def __init__(self, grind_size, name, model, power_consumption):
+        super().__init__(name, model, power_consumption)
+        self.grind_size = grind_size
+
+    def grind_meat(self):
+        print(f"Currently grinding meat to size {self.grind_size}.")
+
+
+new_device = MeatGrinder("Size 4", "Stabby", 5000, "100W")
+print(new_device.name)
+
+#########################################
+
+### Task 2:
