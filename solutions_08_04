@@ -53,3 +53,42 @@ print(new_device.name)
 #########################################
 
 ### Task 2:
+
+class Passport:
+
+
+    def __init__(self, holder_name, date_of_birth, pass_num, country_of_cit):
+        self.__holder_name = holder_name
+        self.__date_of_birth = date_of_birth
+        self.__pass_num = pass_num
+        self.__country_of_cit = country_of_cit
+
+    def get_holder(self):
+        return self.__holder_name
+
+    def set_holder(self):
+        self.__holder_name = input("Provide holder's name: ")
+
+    def get_dob(self):
+        return self.__date_of_birth
+
+    def set_dob(self):
+        self.__date_of_birth = input("Provide date of birth: ")
+
+    def get_pass_num(self):
+        return self.__pass_num
+
+    def set_pass_num(self):
+        self.__pass_num = input("Provide passport's number: ")
+
+    def get_country(self):
+        return self.__country_of_cit
+
+    def set_country(self):
+        self.__country_of_cit = input("Provide country of citizenship: ")
+
+# Instead of creating a method which will print the passport's info, I am just overwriting the print() function
+    def __str__(self):
+        return (f"Name: {self.__holder_name} / DoB: {self.__date_of_birth} / Passport No: {self.__pass_num}"
+                f"/ Country of citizenship: {self.__country_of_cit} ")
+
