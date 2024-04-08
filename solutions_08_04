@@ -92,3 +92,24 @@ class Passport:
         return (f"Name: {self.__holder_name} / DoB: {self.__date_of_birth} / Passport No: {self.__pass_num}"
                 f"/ Country of citizenship: {self.__country_of_cit} ")
 
+class ForeignPassport(Passport):
+
+    def __init__(self, visas, foreign_pass_num, holder_name, date_of_birth, pass_num, country_of_cit):
+        super().__init__(holder_name, date_of_birth, pass_num, country_of_cit)
+        self.__visas = list(visas)
+        self.__foreign_pass_num = foreign_pass_num
+
+    def get_visas(self):
+        return self.__visas
+
+    def __str__(self):
+        return super().__str__() + f"/ Current visas: {self.__visas} / Foreign passport No: {self.__foreign_pass_num}"
+
+    def add_visa(self):
+        self.__visas.append(input("From which country did you receive a visa: "))
+
+
+new_passport = ForeignPassport(["Germany","Japan"], 1721381, "John Doe", "01/02/1999", "12464",
+                               "Bulgaria")
+
+print(new_passport)
